@@ -13,5 +13,5 @@ function handleOrientation(event) {
 
 	background.style.transform = `rotateY(${alpha*0.2222}deg) rotateX(${(180-beta)}deg)`;
 }
-
+console.log('testing');
 window.addEventListener("deviceorientation", handleOrientation, true);
