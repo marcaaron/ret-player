@@ -11,7 +11,7 @@ const background = document.querySelector('.background');
 // 	}
 // 	beta*=0.1;
 //
-
+// 	background.style.transform = `rotateY(${alpha*0.2222}deg) rotateX(${(180-beta)}deg)`;
 // }
 // console.log('testing');
 // window.addEventListener("deviceorientation", handleOrientation, true);
@@ -20,11 +20,14 @@ var gn = new GyroNorm();
 
 gn.init().then(function(){
   gn.start(function(data){
+    // data.do.alpha	( deviceorientation event alpha value )
+    // data.do.beta		( deviceorientation event beta value )
+    // data.do.gamma	( deviceorientation event gamma value )
+    // data.do.absolute	( deviceorientation event absolute value )
 
-    const alpha = data.do.alpha;
-    const beta = data.do.beta;
+	background.style.transform = `rotateY(${data.do.gamma}deg)`;
 
-	background.style.transform = `rotateY(${alpha*0.2222}deg) rotateX(${(180-beta)}deg)`;
+	// rotateX(${beta}deg)
 
   });
 }).catch(function(e){
