@@ -25,9 +25,9 @@ gn.init().then(function(){
     // data.do.gamma	( deviceorientation event gamma value )
     // data.do.absolute	( deviceorientation event absolute value )
 
-	background.style.transform = `rotateY(${data.do.gamma}deg)`;
+	// background.style.transform = `rotateY(${data.do.gamma}deg)`;
+	background.style.transform = `	rotateX(${beta}deg)`;
 
-	// rotateX(${beta}deg)
 
   });
 }).catch(function(e){
